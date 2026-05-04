@@ -34,7 +34,7 @@ Easy integration with Snowflake Cortex Analyst API
 .
 ├── streamlit_app.py
 ├── environment.yml
-├── sales.yaml
+├── semanticeView.yaml [my yaml file i uploaded in Stage] (it has code from yaml file of my Semantice View)
 ├── README.md
 ```
 
@@ -52,7 +52,7 @@ Before running this application, ensure you have:
 Example semantic model path:
 
 ```text
-@DATABASE.SCHEMA.MODELS/retail_model.yaml
+@DATABASE.SCHEMA.MODELS/[yaml file name you uploaded in Stage].yaml
 ```
 
 ---
@@ -71,7 +71,7 @@ download/Copy Paste and create a yaml file locally, get the code of this yaml fr
 
 ## semanticView.yaml is just for your reference!! it is according to my semantic view you have to replace it with your semantic view's yaml code.
 ```sql
-PUT file://sales.yaml @MODELS AUTO_COMPRESS=FALSE; 
+PUT file://[yaml file name you uploaded in Stage].yaml @MODELS AUTO_COMPRESS=FALSE; 
 ```
 
 Verify:
@@ -87,7 +87,7 @@ LIST @MODELS;
 Update the semantic model path inside the app:
 
 ```python
-@YOUR_DATABASE.YOUR_SCHEMA.MODELS/sales.yaml
+@YOUR_DATABASE.YOUR_SCHEMA.MODELS/[yaml file name you uploaded in Stage].yaml
 ```
 
 ---
