@@ -34,6 +34,7 @@ Easy integration with Snowflake Cortex Analyst API
 .
 ├── streamlit_app.py
 ├── environment.yml
+├── sales.yaml
 ├── README.md
 ```
 
@@ -66,8 +67,11 @@ CREATE STAGE MODELS;
 
 Upload your semantic model:
 
+download/Copy Paste and create a yaml file locally, get the code of this yaml from your semantic view in Cortex Analyst then upload this file to stage you created.
+
+## semanticView.yaml is just for your reference!! it is according to my semantic view you have to replace it with your semantic view's yaml code.
 ```sql
-PUT file://retail_model.yaml @MODELS AUTO_COMPRESS=FALSE; 
+PUT file://sales.yaml @MODELS AUTO_COMPRESS=FALSE; 
 ```
 
 Verify:
@@ -78,37 +82,12 @@ LIST @MODELS;
 
 ---
 
-## Installation
-
-Clone the repository:
-
-```bash
-git clone <your-repo-url>
-cd <repo-name>
-```
-
-Install dependencies:
-
-```bash
-pip install streamlit snowflake-snowpark-python
-```
-
----
-
-## Run the Application
-
-```bash
-streamlit run streamlit_app.py
-```
-
----
-
 ## Configuration
 
 Update the semantic model path inside the app:
 
 ```python
-@YOUR_DATABASE.YOUR_SCHEMA.MODELS/retail_model.yaml
+@YOUR_DATABASE.YOUR_SCHEMA.MODELS/sales.yaml
 ```
 
 ---
